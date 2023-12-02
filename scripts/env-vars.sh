@@ -1,3 +1,5 @@
+#!/bin/bash
+
 DOCKER_IMAGE='724155539613.dkr.ecr.us-east-1.amazonaws.com/fw-chat-admin:v02'
 AWS_ACCOUNT_ID="724155539613"
 AWS_REGION="us-east-1"

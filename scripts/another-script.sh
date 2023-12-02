@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -ex
 
 source ${WORKSPACE}/scripts/env-vars.sh
