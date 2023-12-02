@@ -3,7 +3,6 @@ node {
       sh """#!/bin/bash
         source ${WORKSPACE}/scripts/env-vars.sh
         echo "Hello world from test"
-        echo "$DOCKER_IMAGE from test stage"
       """
   }
 
