@@ -1,7 +1,16 @@
 node {
   stage('Test') {
       sh """#!/bin/bash
-        echo "Hello world from git"
+        source ./env-vars.sh
+        echo "Hello world from test"
+        echo "$DOCKER_IMAGE from same script"
+      """
+  }
+
+    stage('Test 2') {
+      sh """#!/bin/bash
+        echo "Hello world from test 2"
+        echo "$DOCKER_IMAGE from different script"
       """
   }
 }
