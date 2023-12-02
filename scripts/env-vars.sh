@@ -4,4 +4,4 @@ AWS_REGION="us-east-1"
 AWS_ROLE_ARN="arn:aws:iam::724155539613:role/cross_account_runway"
 SPOT_INST_LABEL="freshchat-kube-update"
 
- echo "$DOCKER_IMAGE from script"
+echo "$DOCKER_IMAGE from script"

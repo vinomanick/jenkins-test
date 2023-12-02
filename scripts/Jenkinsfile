@@ -20,7 +20,7 @@ node {
 
   stage('Test') {
       sh """#!/bin/bash
-        source ${WORKSPACE}/scripts/env-vars.sh
+        source ${WORKSPACE}/scripts/another-script.sh
         echo "Hello world from test"
       """
   }
