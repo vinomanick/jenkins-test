@@ -19,7 +19,7 @@ node {
   }
 
   stage('Test') {
-      sh $WORKSPACE/scripts/another-script.sh
+      sh "$WORKSPACE/scripts/another-script.sh"
   }
 
   // stage('Test 2') {
