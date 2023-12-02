@@ -1,4 +1,23 @@
 node {
+
+  stage("Prepare") {
+    cleanWs()
+
+    def scmVars = checkout([
+      $class: 'GitSCM',
+      branches: scm.branches,
+      extensions: scm.extensions,
+      userRemoteConfigs: [
+        [
+          credentialsId: scm.userRemoteConfigs[0].credentialsId,
+          name: 'origin',
+          refspec: '+refs/heads/*:refs/remotes/origin/*',
+          url: scm.userRemoteConfigs[0].url
+        ]
+      ],
+    ])
+  }
+
   stage('Test') {
       sh """#!/bin/bash
         source ${WORKSPACE}/scripts/env-vars.sh
