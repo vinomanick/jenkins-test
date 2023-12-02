@@ -7,10 +7,10 @@ node {
       """
   }
 
-    stage('Test 2') {
-      sh """#!/bin/bash
-        echo "Hello world from test 2"
-        echo "$DOCKER_IMAGE from different stage"
-      """
-  }
+  // stage('Test 2') {
+  //   sh """#!/bin/bash
+  //     echo "Hello world from test 2"
+  //     echo "$DOCKER_IMAGE from different stage"
+  //   """
+  // }
 }
