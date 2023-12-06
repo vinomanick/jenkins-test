@@ -1,8 +1,10 @@
+
+println "AWS_REGION ${env.AWS_REGION}"
+println "AWS_ACCOUNT_ID ${env.AWS_ACCOUNT_ID}"
+println "DOCKER_BUILD_SPOT_INST_LABEL ${env.DOCKER_BUILD_SPOT_INST_LABEL}"
+
 node {
-
-  stage("Prepare") {
-    cleanWs()
-
+  stage('Checkout') {
     def scmVars = checkout([
       $class: 'GitSCM',
       branches: scm.branches,
@@ -17,15 +19,4 @@ node {
       ],
     ])
   }
-
-  stage('Test') {
-      sh "$WORKSPACE/scripts/another-script.sh"
-  }
-
-  // stage('Test 2') {
-  //   sh """#!/bin/bash
-  //     echo "Hello world from test 2"
-  //     echo "$DOCKER_IMAGE from different stage"
-  //   """
-  // }
 }
