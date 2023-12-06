@@ -2,6 +2,9 @@
 println "AWS_REGION ${env.AWS_REGION}"
 println "AWS_ACCOUNT_ID ${env.AWS_ACCOUNT_ID}"
 println "DOCKER_BUILD_SPOT_INST_LABEL ${env.DOCKER_BUILD_SPOT_INST_LABEL}"
+println "AWS_REGION ${AWS_REGION}"
+println "AWS_ACCOUNT_ID ${AWS_ACCOUNT_ID}"
+println "DOCKER_BUILD_SPOT_INST_LABEL ${DOCKER_BUILD_SPOT_INST_LABEL}"
 
 node {
   stage('Checkout') {
@@ -18,5 +21,8 @@ node {
         ]
       ],
     ])
+    println "AWS_REGION ${AWS_REGION}"
+    println "AWS_ACCOUNT_ID ${AWS_ACCOUNT_ID}"
+    println "DOCKER_BUILD_SPOT_INST_LABEL ${DOCKER_BUILD_SPOT_INST_LABEL}"
   }
 }
